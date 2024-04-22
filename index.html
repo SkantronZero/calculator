@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" src="fonts/KodeMono/static/KodeMono-Medium.ttf">
     </head>
     <body>
         <div class="header_container">
@@ -31,7 +32,7 @@
                     <div id="calculator_top"></div>
                     <div class="calculator_display">
                         <div id="calculator_display_inner">
-
+                            <div id="calculator_display_inner_text">2210.20560</div>
                         </div>
                     </div>
                     <div class="calculator_title">
@@ -46,29 +47,41 @@
                         </div>
                         <div id = "calculator_title_model">SI-105</div>
                     </div>
-                    <!-- <div class="calculator_power">
-                        <div id = "calculator_power_cell"></div>
-                        <div id = "calculator_power_cell"></div>
-                        <div id = "calculator_power_cell"></div>
-                        <div id = "calculator_power_cell"></div>
-                    </div> -->
                 </div>
+                <div id ="calculator_mid_spacer"></div>
                 <div class="calculator_button_container">
                     <div class="calculator_button_container_left">
-                        <button>div</button>
-                        <button>x</button>
-                        <button>-</button>
-                        <button>+</button>
-                        <button>=</button>
-
-
+                        <div class="calculator_button_container_left_row">
+                            <button class="calculator_button_container_left_class" id="AC_button">AC</button>
+                            <button class="calculator_button_container_left_class" id="plus_minus_button">+/-</button>
+                            <button class="calculator_button_container_left_class" id="modulos">%</button>
+                        </div>
+                        <div class="calculator_button_container_left_row">
+                            <button class="calculator_button_container_left_class" id="seven_button">7</button>
+                            <button class="calculator_button_container_left_class" id="eight_button">8</button>
+                            <button class="calculator_button_container_left_class" id="nine_button">9</button>
+                        </div>
+                        <div class="calculator_button_container_left_row">
+                            <button class="calculator_button_container_left_class" id="four_button">4</button>
+                            <button class="calculator_button_container_left_class" id="five_button">5</button>
+                            <button class="calculator_button_container_left_class" id="six_button">6</button>
+                        </div>
+                        <div class="calculator_button_container_left_row">
+                            <button class="calculator_button_container_left_class" id="one_button">1</button>
+                            <button class="calculator_button_container_left_class" id="two_button">2</button>
+                            <button class="calculator_button_container_left_class" id="three_button">3</button>
+                        </div>
+                        <div class="calculator_button_container_left_row">
+                            <button class="calculator_button_container_left_class" id="zero_button">0</button>
+                            <button class="calculator_button_container_left_class" id="period_button">.</button>
+                        </div>
                     </div>
-                    <div class="calculator_button_container_left">
-                        <button>div</button>
-                        <button>x</button>
-                        <button>-</button>
-                        <button>+</button>
-                        <button>=</button>
+                    <div class="calculator_button_container_right">
+                        <button class="calculator_button_container_right_class" id="divide_button">/</button>
+                        <button class="calculator_button_container_right_class" id="multiply_button">x</button>
+                        <button class="calculator_button_container_right_class" id="minus_button">-</button>
+                        <button class="calculator_button_container_right_class" id="add_button">+</button>
+                        <button class="calculator_button_container_right_class" id="equal_button">=</button>
                         
 
                         
@@ -77,6 +90,7 @@
 
 
                 </div>
+                <div id="calculator_bottom_spacer"></div>
             </div>
             
 
@@ -90,6 +104,6 @@
 
         
         
-        <script src="scripts/script.js" async defer></script>
+        <script src="script.js" async defer></script>
     </body>
 </html>
