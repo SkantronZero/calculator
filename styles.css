@@ -22,11 +22,11 @@ Header Section
     display:flex;
     flex-direction: column;
     height:20%;
-    border: red solid 1px;
+    /* border: red solid 1px; */
 }
 
 .header_banner{
-    border: blue solid 1px;
+    /* border: blue solid 1px; */
     display: flex;
     justify-content: space-between;
     height: 80%;
@@ -35,14 +35,14 @@ Header Section
 
 
 .header_banner_item{
-    border: green solid 1px;
+    /* border: green solid 1px; */
     align-self: center;
 }
 
 .header_links{
     font-size: 18px;
     align-self: center;
-    padding: 1%;
+    padding: 2%;
 }
 
 
@@ -65,7 +65,8 @@ Calculator Section
     align-items: center;
     height: 600px;
     width: 350px;
-    /* border: red solid 1px; */
+    /* border:10px 10px rgb(9, 37, 70); */
+
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 25px;
@@ -111,7 +112,6 @@ Calculator Section
     width: 95%;
     height: 90%;
     border-radius: 5px;
-    border: 1px red solid;
     background: grey;
     /* outline: 3px solid rgba(29, 31, 29, 0.342);
     outline-offset: -3px; */
@@ -121,11 +121,10 @@ Calculator Section
     align-content: center;
 }
 
-#calculator_display_inner_text{
-    border: 1px red solid; 
+#calculator_display_inner_text{ 
     font-family: 'KodeMono', sans-serif;
     font-size: 32px;
-    text-shadow: 2px 2px rgba(22, 22, 22, 0.466);
+    text-shadow: 2px 1px rgba(22, 22, 22, 0.466);
     padding-right: 5px;
     align-self:flex-end;
 
@@ -149,6 +148,7 @@ Calculator Section
     align-items: center;
     background-color: rgb(18, 76, 141);
     box-shadow: 1px rgb(10, 56, 107) solid;
+    padding-left: 10px;
 }
 
 #calculator_title_name{
@@ -159,6 +159,7 @@ Calculator Section
     font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
     color: white;
     justify-content: center;
+    
     
 }
 
@@ -227,12 +228,20 @@ Calculator Section
 .calculator_button_container_right_class{
     height: 65px;
     width: 100%;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    font-size: 32px;
 }
 
 
 .calculator_button_container_left_class{
     width: 65px;
     height: 65px;
+    color: rgb(18, 76, 141);
+    background-color: rgb(230, 221, 221);
+    border-radius: 10px;
+    font-size: 32px;
 }
 
 
