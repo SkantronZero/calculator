@@ -230,8 +230,7 @@ Calculator Section
     border-radius: 10px;
     font-size: 32px;
     border-style: inset;
-    box-shadow: 3px 2px 3px 0px #000000, 
-                3px 2px 5px 0px #000000;
+    box-shadow: 3px 2px 3px 0px #000000;
 }
 .calculator_button_container_right_class:active{
     height: 65px;
@@ -240,8 +239,9 @@ Calculator Section
     background-color: rgb(182, 41, 22);
     border-radius: 10px;
     font-size: 32px;
-    box-shadow: inset 3px 2px 3px 0px #000000, 
-                inset 3px 2px 5px 0px #000000;
+    box-shadow: inset 3px 2px 3px 0px #000000;
+    padding-right: 1px;
+    padding-top: 3px;
 }
 .calculator_button_container_right_class:hover{
     background-color: rgb(182, 41, 22);
@@ -257,8 +257,8 @@ Calculator Section
     font-size: 30px;
     font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
     border-style: inset;
-    box-shadow: 3px 2px 3px 0px #000000, 
-                3px 2px 5px 0px #000000;
+    box-shadow: 3px 1px 3px 0px #000000;
+    align-content: center;
 
 }
 .calculator_button_container_left_class:active{
@@ -269,8 +269,10 @@ Calculator Section
     border-radius: 10px;
     font-size: 30px;
     border-style: none;
-    box-shadow: inset 3px 2px 3px 0px #000000, 
-    inset 3px 2px 5px 0px #000000;
+    box-shadow: inset 3px 1px 3px 0px #000000, 
+    inset 3px 1px 5px 0px #000000;
+    padding-right: 1px;
+    padding-top: 3px;
 }
 .calculator_button_container_left_class:hover{
     background-color: rgb(187, 181, 181);
@@ -281,11 +283,6 @@ Calculator Section
 #zero_button{
     width: 135px;
 }
-
-/* #equal_button{
-    height: px;
-} */
-
 
 #calculator_bottom_spacer{
     height: 3%;
