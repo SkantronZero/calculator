@@ -4,8 +4,6 @@ Initialization
 
 let calculator_display_inner_text = document.getElementById("calculator_display_inner_text");
 calculator_display_inner_text.textContent = '102150';
-
-
 let AC_button = document.getElementById("AC_button");
 
 

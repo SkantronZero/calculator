@@ -2,10 +2,7 @@
     border: red solid 1px;
 } */
 
-@font-face{
-    font-family: 'KodeMono';
-    src: url('fonts/KodeMono/static/KodeMono-Medium.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono&display=swap');
 
 body{
     display: flex;
@@ -122,7 +119,7 @@ Calculator Section
 }
 
 #calculator_display_inner_text{ 
-    font-family: 'KodeMono', sans-serif;
+    font-family: 'Kode Mono', sans-serif;
     font-size: 32px;
     text-shadow: 2px 1px rgba(22, 22, 22, 0.466);
     padding-right: 5px;
@@ -229,9 +226,25 @@ Calculator Section
     height: 65px;
     width: 100%;
     color: white;
-    background-color: red;
+    background-color: rgb(226, 48, 24);
     border-radius: 10px;
     font-size: 32px;
+    border-style: inset;
+    box-shadow: 3px 2px 3px 0px #000000, 
+                3px 2px 5px 0px #000000;
+}
+.calculator_button_container_right_class:active{
+    height: 65px;
+    width: 100%;
+    color: white;
+    background-color: rgb(182, 41, 22);
+    border-radius: 10px;
+    font-size: 32px;
+    box-shadow: inset 3px 2px 3px 0px #000000, 
+                inset 3px 2px 5px 0px #000000;
+}
+.calculator_button_container_right_class:hover{
+    background-color: rgb(182, 41, 22);
 }
 
 
@@ -241,8 +254,28 @@ Calculator Section
     color: rgb(18, 76, 141);
     background-color: rgb(230, 221, 221);
     border-radius: 10px;
-    font-size: 32px;
+    font-size: 30px;
+    font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
+    border-style: inset;
+    box-shadow: 3px 2px 3px 0px #000000, 
+                3px 2px 5px 0px #000000;
+
 }
+.calculator_button_container_left_class:active{
+    width: 65px;
+    height: 65px;
+    color: rgb(18, 76, 141);
+    background-color: rgb(146, 141, 141);
+    border-radius: 10px;
+    font-size: 30px;
+    border-style: none;
+    box-shadow: inset 3px 2px 3px 0px #000000, 
+    inset 3px 2px 5px 0px #000000;
+}
+.calculator_button_container_left_class:hover{
+    background-color: rgb(187, 181, 181);
+}
+
 
 
 #zero_button{
