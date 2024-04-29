@@ -54,6 +54,7 @@ Calculator Section
     /* border: blue solid 1px; */
     height:80%;
     justify-content: center;
+    
 }
 
 .calculator_frame{
@@ -69,7 +70,9 @@ Calculator Section
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     background-color: rgb(13, 70, 134);
-    box-shadow: 10px 4px 10px rgba(37, 36, 36, 0.466);
+    box-shadow: 10px 4px 10px rgba(37, 36, 36, 0.466),
+    4px 4px rgb(81, 114, 150);
+    border: 2px solid rgb(2, 54, 112);
 }
 
 .calculator_top_40{
@@ -135,6 +138,7 @@ Calculator Section
     justify-content: space-between;
     background-color: rgb(18, 76, 141);
     box-shadow: 1px rgb(10, 56, 107) solid; 
+    border: 2px solid rgb(2, 54, 112)
 }
 
 .calculator_title_name_and_power{
@@ -146,6 +150,7 @@ Calculator Section
     background-color: rgb(18, 76, 141);
     box-shadow: 1px rgb(10, 56, 107) solid;
     padding-left: 10px;
+    
 }
 
 #calculator_title_name{
@@ -284,6 +289,15 @@ Calculator Section
     width: 135px;
 }
 
+#back_button{
+    font-size: 36px;
+    font-weight: bolder;
+}
+
 #calculator_bottom_spacer{
     height: 3%;
+}
+
+#plus_minus_button{
+    letter-spacing: -2px;
 }
