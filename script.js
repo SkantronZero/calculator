@@ -1,7 +1,13 @@
 /*
+Notes
+*/
+/*
+
+*/
+
+
+/*
 Initialization
-
-
 */
 
 const audio = new Audio()
@@ -61,8 +67,6 @@ period_button.addEventListener("click", buttonConversion);
 back_button.addEventListener("click", buttonConversion);
 
 
-
-
 /*
 
 Functions
@@ -73,11 +77,15 @@ function play(e) {
     audio.play();
   }
 
+
+// converts the button's text into a value to be stored
 function buttonConversion(e){
     let pressed_button = (String(e.target.textContent));
     inputCollection(e);
 }
 
+
+// evaluates the collected inputs based on the operation given
 function evaluate(x, op, y){
     
     let evaluation = '';
@@ -99,8 +107,11 @@ function evaluate(x, op, y){
         default:
     }
 
+    // updates the display with the output
     calculator_display_inner_text.textContent = evaluation;
+    // adds the evaluation into the collection of numbers
     inputNumbers.unshift(Number(evaluation));
+    // pops the last number collection entry out so that there will always only be 2 or less
     inputNumbers.pop();
 
 }
@@ -165,6 +176,7 @@ function inputCollection(event){
 
     if(input == 'Delete' || input == 'AC'){
         clearCollectionAndDisplay('Full Clear');
+        bmMode = false;
         return;
     }
 
