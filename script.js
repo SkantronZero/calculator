@@ -11,7 +11,9 @@ let bmModeRegEx = '[1-5]';
 let nextOperationFlag = false;
 let numRegEx = '[0-9.]';
 let periodRegEx = '[.]';
-let inputNumbers = ['1','1'];
+let operationRegEx = '[\\/\\+\\-\\*x]'
+let inputNumbers = [];
+let Operation = [];
 
 let calculator_button_container_left_class = document.getElementsByClassName("calculator_button_container_left_class");
 
@@ -66,44 +68,76 @@ back_button.addEventListener("click", buttonConversion);
 Functions
 
 */
-
-// function buttonConversion2(e){
-//     console.log(String(e.target.textContent));
-// }
-
 function play(e) {
-    console.log(e);
     var audio = document.getElementById('audio'+e);
     audio.play();
   }
 
 function buttonConversion(e){
-    console.log((String(e.target.textContent)));
     let pressed_button = (String(e.target.textContent));
     inputCollection(e);
 }
 
-function inputCollection(event){
-    console.log(event);
-    // console.log(event.key);
+function evaluate(x, op, y){
+    
+    let evaluation = '';
+    
+    switch(op){
+        case '*':
+        case 'x':
+            evaluation = x * y;
+        break;
+        case '/':
+            evaluation = x / y;
+        break;
+        case '+':
+            evaluation = x + y;
+        break;
+        case '-':
+            evaluation = x - y;
+        break;
+        default:
+    }
 
-    if(nextOperationFlag){
-        clearCollectionAndDisplay();
+    calculator_display_inner_text.textContent = evaluation;
+    inputNumbers.unshift(Number(evaluation));
+    inputNumbers.pop();
+
+}
+
+function clearCollectionAndDisplay(n){
+
+    if(n == 'Full Clear'){
+        calculator_display_inner_text.textContent = '';
+        nextOperationFlag = false;
+        inputNumbers = [];
+        Operation = [];
+    }
+    else{
+        calculator_display_inner_text.textContent = '';
+    }
+
+}
+
+function inputCollection(event){
+
+    let input = '';
+
+    if(nextOperationFlag == true){
+        clearCollectionAndDisplay('Clear Display');
         nextOperationFlag = false;
     }
     
-    let input = '';
+    
 
     // convert key press event to String of key pressed
     if(event.type == "keydown"){
         input = event.key;
-        console.log("key input is: "+input);
     }
     
     // convert button click event to String of button clicked
     if(event.type == "click"){
         input = event.target.textContent;
-        console.log("button input is: "+input);
     }
 
     // bop
@@ -120,68 +154,67 @@ function inputCollection(event){
         calculator_display_inner_text.textContent = str;
     }
 
-    console.log(/[.]/.test(calculator_display_inner_text.textContent));
-
     if(input == '.' && (/[.]/.test(calculator_display_inner_text.textContent) == true)){
-        console.log("multiple periods entered");
         return;
     }
 
     if(typeof(input) === 'string' && input.match(numRegEx)){
         calculator_display_inner_text.textContent += input;
+        return;
     }
 
-    if(input == 'Delete'){
-        clearCollectionAndDisplay();
+    if(input == 'Delete' || input == 'AC'){
+        clearCollectionAndDisplay('Full Clear');
+        return;
     }
 
+
+    if(input == '+/-'){
+        calculator_display_inner_text.textContent = calculator_display_inner_text.textContent * -1;
+        return;
+    }
     
 
-
-    if(input == 'x' || input == '*'){
-        inputNumbers.unshift(calculator_display_inner_text.textContent);
-        inputNumbers.pop();
+    
+    if(input.match(operationRegEx)){
+        inputNumbers.unshift(Number(calculator_display_inner_text.textContent));
+        Operation.unshift(input);
         nextOperationFlag = true;
-        console.log('multiply');
-        console.log(inputNumbers);
-    }
-    if(input == '/'){
-        console.log('divide');
-    }
-    if(input == '%'){
-        console.log('back');
-    }
-    if(input == '-'){
-        console.log('subtract');
-    }
-    if(input == '+'){
-        console.log('add');
+
+        
+        if(inputNumbers.length > 2){
+            inputNumbers.pop();
+            Operation.pop();
+        }
+        if(inputNumbers.length == 2){;
+            evaluate(inputNumbers[1], Operation[1], inputNumbers[0]);
+        }
 
     }
+    
     if(input == '=' || input == 'Enter'){
-        if(calculator_display_inner_text.textContent = '12345'){
+
+
+        if(calculator_display_inner_text.textContent == '12345'){
             // calculator_display_inner_text.style.fontSize = '16px';
             // calculator_display_inner_text.textContent = 'Brian McKnight Mode Activated';
             // calculator_display_inner_text.style.fontSize = '32px';
             bmMode = true;
             alert('Brian McKnight Mode Activated');
         }
-        console.log('equals');
+        inputNumbers.unshift(Number(calculator_display_inner_text.textContent));
+
+        if(inputNumbers.length > 2){
+            inputNumbers.pop();
+            Operation.pop();
+        }
+
+        evaluate(inputNumbers[1], Operation[0], inputNumbers[0]);
+        inputNumbers = [];
+        Operation = [];
+        nextOperationFlag = false;
     }
 }
-
-function clearCollectionAndDisplay(){
-
-    calculator_display_inner_text.textContent = '';
-
-}
-
-function evaluate(x, op, y){
-    // calculator_display_inner_text.textContent = 
-}
-
-
-
 
 /*
 
@@ -190,5 +223,5 @@ Execution
 */
 
 window.addEventListener('keydown', inputCollection);
-AC_button.addEventListener('click', clearCollectionAndDisplay);
+// AC_button.addEventListener('click', clearCollectionAndDisplay('Full Clear'));
 
